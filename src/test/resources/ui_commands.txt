@@ -1,0 +1,19 @@
+let owner = new User(1, Vasya, Petrov)
+# created User: <toString()>
+
+let zoo = new Zoo($owner, BigZoo, true)
+# created Zoo: <toString()>
+
+$zoo.addEnclosure(0, new Enclosure(....))
+# completed Zoo.addEnclosure: <0.toString()>, <Enclosure.toString()>
+
+$zoo.addEnclosure(1 new Enclosure(..........))
+
+$zoo.addDays(3)
+
+
+# 1. comments starts from #
+# 2. empty lines ignored
+# 3. keywords: let, new
+# 4. methods calling
+# 5. help
