@@ -1,5 +1,5 @@
 
-package ncec.workwithzoo.sourceofprofit;
+package workwithzoo.sourceofprofit;
 
 /**
  *

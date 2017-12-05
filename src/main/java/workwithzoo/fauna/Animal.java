@@ -6,7 +6,7 @@ import workwithzoo.sourceofprofit.Buyable;
  *
  * @author DantalioNxxi
  */
-public abstract class Animal implements Reproduceable, Buyable{
+public abstract class Animal implements Buyable{ //Reproducable
     /**
      * After pull from the enclosure, the animal do not must to leave the zoo
      */
@@ -15,11 +15,11 @@ public abstract class Animal implements Reproduceable, Buyable{
     /**
      * If true, then this male gender.
      */
-    boolean isMale;
+//    boolean isMale;
     
     int agression;
     
-    int age;
+//    int age;
     
     protected TypeFood typeFood;
     

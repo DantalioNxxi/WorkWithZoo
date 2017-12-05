@@ -1,16 +1,44 @@
 let owner = new User(1, Vasya, Petrov)
 # created User: <toString()>
 
-let zoo = new Zoo($owner, BigZoo, true)
+let zoo = new Zoo($owner, BigZoo)
 # created Zoo: <toString()>
 
-$zoo.addEnclosure(0, new Enclosure(....))
+let enclosure = new Enclosure(11, 500)
+# created Zoo: <toString()>
+
+let enclosure2 = new Enclosure(22, 1200)
+# created Zoo: <toString()>
+
+$zoo.addEnclosure(1, $enclosure)
 # completed Zoo.addEnclosure: <0.toString()>, <Enclosure.toString()>
 
-$zoo.addEnclosure(1 new Enclosure(..........))
-
 $zoo.addDays(3)
+# completed Zoo.addDays: В зоопарке BigZoo прошло 3.0 дней...
 
+$zoo.addEnclosure(2, $enclosure2)
+# completed Zoo.addEnclosure: <0.toString()>, <Enclosure.toString()>
+
+let zoo2 = new Zoo($owner, SmallZoo)
+# created Zoo: <toString()>
+
+let enclosure3 = new Enclosure(33, 7000)
+# created Zoo: <toString()>
+
+$zoo2.addEnclosure(3, $enclosure3)
+# completed Zoo.addEnclosure: <0.toString()>, <Enclosure.toString()>
+
+$zoo2.addDays(6)
+# completed Zoo.addDays: В зоопарке SmallZoo прошло 3.0 дней...
+
+
+# Как быть с внутренними new  и перегруженными методами, конструкторами?
+# Также пока не обрабатывается конструктор без переменных
+# Заполняя коллекцию nval-ом, мы получаем объект Double, который позже не кастится к int и т.п.
+# На методы пока ничего не разбивал. Впрочем, временные переменные и флаги пока используются в try
+#$zoo.addEnclosure(0, new Enclosure())
+#$zoo.addEnclosure(1, new Enclosure())
+# $zoo.addDays(3)
 
 # 1. comments starts from #
 # 2. empty lines ignored

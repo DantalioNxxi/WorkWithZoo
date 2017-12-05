@@ -18,24 +18,27 @@ public class Zoo extends SourceOfProfit {
      * If the zoo is contact, then probability of accidents increase,
      * but attendanse increase too.
      */
-    public boolean isContact = false;
+//    public boolean isContact = false;
     
     //Quantity of visitors is equal one by default.
     public int attendanse = 1;
     
     //Лишний расчёт?
 //    private float square;
-    private float pAccident;
+    private float pAccident; // Вероятность несчастного случая
     private float profitForDay;
     
     //Coefficient of the profit for day.
     private float kProfit;
     private float cost = 200;
     
+    //Качество ухода за животными:
+    private float qCare = 1;
+    
     /**
      * сделать обобщённым (или ограниченным с учётом capacity)
      */
-    private Map<Integer, Enclosure> enclosures = new HashMap<>();    
+    private Map<Double, Enclosure> enclosures = new HashMap<>();    
     
     private Map<Integer, Employee> staff = new HashMap<>();    
     
@@ -47,19 +50,24 @@ public class Zoo extends SourceOfProfit {
      * @param name
      * @param isContact 
      */
-    public Zoo(User owner, String name, boolean isContact){
+    public Zoo(User owner, String name){
         isProfitably = false;
         this.name = name;
         this.owner = owner;
-        this.isContact = isContact;
+//        this.isContact = isContact;
     }
           
+    
+    public void addDays(double days){
+        System.out.println("В зоопарке "+this.name+" прошло "+days+" дней...");
+    }
+    
     /**
      * Adds a new aviary in the zoo.
      * @param id
      * @param enclosure 
      */
-    public void addEnclosure(int id, Enclosure enclosure){
+    public void addEnclosure(double id, Enclosure enclosure){
         
         if (enclosures.containsValue(id)) {//If such object already in pull
         throw new IllegalArgumentException("Вольер с таким ID"+id+" уже есть!");
@@ -119,6 +127,11 @@ public class Zoo extends SourceOfProfit {
     public boolean selling(){
         //check the sale
         return true;
+    }
+    
+    @Override
+    public String toString(){
+        return "Name "+name+" Owner "+owner; //+"isContact "+isContact
     }
     
 }
