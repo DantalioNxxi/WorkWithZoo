@@ -13,7 +13,8 @@ import workwithzoo.fauna.Animal;
  * The class of the aviary.
  * @author DantalioNxxi
  */
-public class Enclosure {
+public class Enclosure implements Buyable, Profitable{
+//Losseable если обходить животных внутри или учитывать затраты на терморегляцию
     
     /**
      * сделать иерархию?.. с установленными ценами и характеристиками
@@ -35,16 +36,40 @@ public class Enclosure {
     
     protected boolean isThermoregulation;
     
-    protected Map<Integer, Animal> animals; 
+    protected Map<String, Animal> animals; 
+    
+    //Температура в вольере, которая влияет на самочувствие животного.
+    // Вероятно понадобится будет счётчик пребывания животного не в своей среде.
+    
+    //Закрытость вольера. Безопасность для посетителей.
+    
+    //Наличие животных, экзотичных по ситуации (теплолюбивых в зимнее время) повышает количество посетителей.
+    
+    //Модификация вольеров?
     
     /**
      * A list of the solved animals.
      */
-    protected ArrayList<String> solvedAnimals;
+    protected ArrayList<Animal> solvedAnimals; //Не имеет смысла без иерархии подклассов Enclosure
 
-    public Enclosure(double id, double cost){ //for tokenizer
+    public Enclosure(double id, double cost){ //is double for tokenizer
         this.id = id;
         this.cost = cost;
+    }
+
+    @Override
+    public double sell() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Buyable buy() {
+        return this;
+    }
+
+    @Override
+    public double getProfit() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     @Override

@@ -7,16 +7,8 @@ package workwithzoo.sourceofprofit;
  */
 public interface Buyable {
     
-    /**
-     * Sells the object.
-     * @return true, if the sale held success.
-     */
-    boolean selling();
+    double sell();
     
-    /**
-     * Buy the object.
-     * @return true, if the buying held success.
-     */
-    boolean buy();
+    Buyable buy();
     
 }

@@ -6,5 +6,5 @@ package workwithzoo.sourceofprofit;
  * @author DantalioNxxi
  */
 public interface Profitable {
-    float getProfit();
+    double getProfit();
 }

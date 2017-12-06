@@ -5,6 +5,6 @@ package workwithzoo.sourceofprofit;
  *
  * @author DantalioNxxi
  */
-public interface Leasable {
-    
+public interface Losseable {
+    public double getLoss();
 }

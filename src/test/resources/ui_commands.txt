@@ -45,3 +45,11 @@ $zoo2.addDays(6)
 # 3. keywords: let, new
 # 4. methods calling
 # 5. help
+
+
+# 44 ,
+# 40 (
+# 41 )
+# 61 =
+# 10 - перевод строки
+# 35 #
