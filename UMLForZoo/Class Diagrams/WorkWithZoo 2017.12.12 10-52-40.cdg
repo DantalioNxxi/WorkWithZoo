@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="WorkWithZoo">
+  <ClassDiagramComponents>
+    <Class name="Employee" package="workwithzoo.employee" visibility="public" isAbstract="true" xPosition="302.0" yPosition="1255.0">
+      <Fields>
+        <Field name="INN" type="int" visibility="protected" isFinal="true"/>
+        <Field name="experience" type="int" visibility="public"/>
+        <Field name="salary" type="float" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="protected">
+          <Argument type="int" name="inn"/>
+          <Argument type="int" name="experience"/>
+          <Argument type="float" name="salary"/>
+        </Constructor>
+        <Constructor visibility="protected">
+          <Argument type="int" name="inn"/>
+          <Argument type="int" name="experience"/>
+        </Constructor>
+        <Constructor visibility="protected">
+          <Argument type="int" name="inn"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="getSalary" returnType="float" visibility="public"/>
+        <Method name="setSalary" returnType="void" visibility="public">
+          <Argument type="float" name="salary"/>
+        </Method>
+        <Method name="getINN" returnType="int" visibility="public"/>
+        <Method name="getLoss" returnType="float" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Guide" package="workwithzoo.employee" visibility="public" xPosition="7.0" yPosition="1245.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="inn"/>
+          <Argument type="int" name="experience"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="int" name="inn"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Keeper" package="workwithzoo.employee" visibility="public" xPosition="7.0" yPosition="1603.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="inn"/>
+          <Argument type="int" name="experience"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="int" name="inn"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Vet" package="workwithzoo.employee" visibility="public" xPosition="7.0" yPosition="1419.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="inn"/>
+          <Argument type="int" name="experience"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="int" name="inn"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="AmurTiger" package="workwithzoo.fauna" visibility="public" xPosition="2999.0" yPosition="2394.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nickname"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Animal" package="workwithzoo.fauna" visibility="public" isAbstract="true" xPosition="2054.0" yPosition="2147.0">
+      <Fields>
+        <Field name="MAX_AGGRESSION" type="int" visibility="protected" isStatic="true" isFinal="true"/>
+        <Field name="random" type="Random" visibility="protected" isStatic="true"/>
+        <Field name="isInsideZoo" type="boolean" visibility="public"/>
+        <Field name="nickname" type="String" visibility="public"/>
+        <Field name="zoo" type="Zoo" visibility="public"/>
+        <Field name="enclosure" type="Enclosure" visibility="public"/>
+        <Field name="cost" type="float" visibility="public"/>
+        <Field name="costCare" type="float" visibility="public"/>
+        <Field name="defaultProfit" type="float" visibility="protected"/>
+        <Field name="aggression" type="int" visibility="protected"/>
+        <Field name="tired" type="int" visibility="private"/>
+        <Field name="fever" type="int" visibility="private"/>
+        <Field name="hungry" type="int" visibility="private"/>
+        <Field name="agony" type="int" visibility="private"/>
+        <Field name="feeling" type="EnumSet&lt;StateHealth&gt;" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="protected">
+          <Argument type="String" name="nickname"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getLikesClimate" returnType="Climate.TypeClimate" visibility="public"/>
+        <Method name="getSumFeeling" returnType="int" visibility="public"/>
+        <Method name="isDead" returnType="boolean" visibility="public"/>
+        <Method name="showIncreaseState" returnType="void" visibility="private">
+          <Argument type="StateHealth" name="ch"/>
+        </Method>
+        <Method name="showDecreaseState" returnType="void" visibility="private">
+          <Argument type="StateHealth" name="ch"/>
+        </Method>
+        <Method name="increaseState" returnType="void" visibility="private">
+          <Argument type="StateHealth" name="ch"/>
+          <Argument type="int" name="count"/>
+        </Method>
+        <Method name="decreaseState" returnType="void" visibility="private">
+          <Argument type="StateHealth" name="ch"/>
+          <Argument type="int" name="count"/>
+        </Method>
+        <Method name="checkStateOfAnimal" returnType="void" visibility="public"/>
+        <Method name="checkGuide" returnType="void" visibility="public"/>
+        <Method name="checkTherapy" returnType="void" visibility="public"/>
+        <Method name="chechCare" returnType="void" visibility="public"/>
+        <Method name="checkClimate" returnType="void" visibility="public"/>
+        <Method name="updateClimate" returnType="void" visibility="public">
+          <Argument type="Climate.TypeClimate" name="newClimate"/>
+        </Method>
+        <Method name="die" returnType="void" visibility="public"/>
+        <Method name="getProfit" returnType="float" visibility="public"/>
+        <Method name="getLoss" returnType="float" visibility="public"/>
+        <Method name="sell" returnType="float" visibility="public"/>
+        <Method name="buy" returnType="Animal" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="setAggression" returnType="void" visibility="private">
+          <Argument type="int" name="aggr"/>
+        </Method>
+        <Method name="checkFeeling" returnType="boolean" visibility="private">
+          <Argument type="int" name="priority"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Climate" package="workwithzoo.fauna" visibility="public" xPosition="1431.0" yPosition="170.0">
+      <Fields>
+        <Field name="observers" type="List&lt;ClimateObserver&gt;" visibility="public" isStatic="true"/>
+        <Field name="outClimate" type="TypeClimate" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="getOutClimate" returnType="TypeClimate" visibility="public" isStatic="true"/>
+        <Method name="setOutClimate" returnType="void" visibility="public" isStatic="true">
+          <Argument type="TypeClimate" name="outClimate"/>
+        </Method>
+        <Method name="changeMonth" returnType="void" visibility="public" isStatic="true">
+          <Argument type="int" name="oldMonth"/>
+        </Method>
+        <Method name="addObserver" returnType="void" visibility="public" isStatic="true">
+          <Argument type="ClimateObserver" name="ob"/>
+        </Method>
+        <Method name="removeObserver" returnType="void" visibility="public" isStatic="true">
+          <Argument type="ClimateObserver" name="ob"/>
+        </Method>
+        <Method name="notifyObservers" returnType="void" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Class name="Lion" package="workwithzoo.fauna" visibility="public" xPosition="3014.0" yPosition="2704.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nickname"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Middle" package="workwithzoo.fauna" visibility="public" xPosition="2634.0" yPosition="2394.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="protected">
+          <Argument type="String" name="nickname"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Polar" package="workwithzoo.fauna" visibility="public" isAbstract="true" xPosition="2599.0" yPosition="2169.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="protected">
+          <Argument type="String" name="nickname"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="PolarBear" package="workwithzoo.fauna" visibility="public" xPosition="2986.0" yPosition="2169.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nickname"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Tropical" package="workwithzoo.fauna" visibility="public" isAbstract="true" xPosition="2638.0" yPosition="2604.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="protected">
+          <Argument type="String" name="nickname"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Enclosure" package="workwithzoo.sourceofprofit" visibility="public" xPosition="2527.0" yPosition="1223.0">
+      <Fields>
+        <Field name="id" type="int" visibility="protected"/>
+        <Field name="capacity" type="int" visibility="protected"/>
+        <Field name="intoAnimals" type="Map&lt;String, Animal&gt;" visibility="private"/>
+        <Field name="cost" type="float" visibility="protected"/>
+        <Field name="isThermoregulation" type="boolean" visibility="protected"/>
+        <Field name="tregulationIsOn" type="boolean" visibility="protected"/>
+        <Field name="zoo" type="Zoo" visibility="public"/>
+        <Field name="innerClimate" type="Climate.TypeClimate" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="id"/>
+          <Argument type="int" name="capacity"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="int" visibility="public"/>
+        <Method name="getInnerClimate" returnType="Climate.TypeClimate" visibility="public"/>
+        <Method name="updateClimate" returnType="void" visibility="public">
+          <Argument type="Climate.TypeClimate" name="newClimate"/>
+        </Method>
+        <Method name="setClimate" returnType="void" visibility="public">
+          <Argument type="Climate.TypeClimate" name="newClimate"/>
+        </Method>
+        <Method name="setClimate" returnType="void" visibility="public">
+          <Argument type="String" name="newClimate"/>
+        </Method>
+        <Method name="offClimate" returnType="void" visibility="public"/>
+        <Method name="setThermoregulation" returnType="void" visibility="public"/>
+        <Method name="addAnimal" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="Animal" name="a"/>
+        </Method>
+        <Method name="removeAnimal" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="sell" returnType="float" visibility="public"/>
+        <Method name="buy" returnType="Buyable" visibility="public"/>
+        <Method name="getLoss" returnType="float" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="EnclosureClimateException" package="workwithzoo.sourceofprofit" visibility="public" xPosition="2921.0" yPosition="925.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="message"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="message"/>
+          <Argument type="Throwable" name="cause"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Throwable" name="cause"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="message"/>
+          <Argument type="Throwable" name="cause"/>
+          <Argument type="boolean" name="enableSuppression"/>
+          <Argument type="boolean" name="writableStackTrace"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="EnclosureFactory" package="workwithzoo.sourceofprofit" visibility="public" xPosition="114.0" yPosition="1988.0">
+      <Fields>
+        <Field name="id" type="int" visibility="private"/>
+        <Field name="capacity" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="setCapacity" returnType="void" visibility="public">
+          <Argument type="int" name="capacity"/>
+        </Method>
+        <Method name="getId" returnType="int" visibility="public"/>
+        <Method name="getCapacity" returnType="int" visibility="public"/>
+        <Method name="getNewEnclosure" returnType="Enclosure" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="EnclosureStoreException" package="workwithzoo.sourceofprofit" visibility="public" xPosition="3031.0" yPosition="1564.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="message"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Throwable" name="cause"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="message"/>
+          <Argument type="Throwable" name="cause"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="message"/>
+          <Argument type="Throwable" name="cause"/>
+          <Argument type="boolean" name="enableSuppression"/>
+          <Argument type="boolean" name="writableStackTrace"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="SourceOfProfit" package="workwithzoo.sourceofprofit" visibility="public" isAbstract="true" xPosition="904.0" yPosition="362.0">
+      <Fields>
+        <Field name="cost" type="float" visibility="protected"/>
+        <Field name="owner" type="Businessman" visibility="public"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="setCost" returnType="void" visibility="public">
+          <Argument type="float" name="cost"/>
+        </Method>
+        <Method name="getCost" returnType="float" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="SourceOfProfitException" package="workwithzoo.sourceofprofit" visibility="public" xPosition="3303.0" yPosition="1216.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="message"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="message"/>
+          <Argument type="Throwable" name="cause"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Throwable" name="cause"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="message"/>
+          <Argument type="Throwable" name="cause"/>
+          <Argument type="boolean" name="enableSuppression"/>
+          <Argument type="boolean" name="writableStackTrace"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Zoo" package="workwithzoo.sourceofprofit" visibility="public" xPosition="1247.0" yPosition="1209.0">
+      <Fields>
+        <Field name="name" type="String" visibility="public"/>
+        <Field name="owner" type="Businessman" visibility="public"/>
+        <Field name="zooLifeStyle" type="ZooLifeStyle" visibility="public" isFinal="true"/>
+        <Field name="ef" type="EnclosureFactory" visibility="public"/>
+        <Field name="random" type="Random" visibility="private"/>
+        <Field name="enclosures" type="Map&lt;Integer, Enclosure&gt;" visibility="private"/>
+        <Field name="staff" type="Map&lt;Integer, Employee&gt;" visibility="private"/>
+        <Field name="animals" type="Map&lt;String, Animal&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Businessman" name="owner"/>
+          <Argument type="String" name="name"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="addEnclosure" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+          <Argument type="Enclosure" name="enclosure"/>
+        </Method>
+        <Method name="createNewEnlosure" returnType="void" visibility="public">
+          <Argument type="int" name="capacity"/>
+        </Method>
+        <Method name="removeEnclosure" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="addAnimal" returnType="void" visibility="public">
+          <Argument type="Animal" name="a"/>
+        </Method>
+        <Method name="sellAnimal" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="addAnimalIntoEnclosure" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="removeAnimalFromEnclosure" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="removeAnimal" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="updateClimate" returnType="void" visibility="public">
+          <Argument type="Climate.TypeClimate" name="newClimate"/>
+        </Method>
+        <Method name="addEmployee" returnType="void" visibility="public">
+          <Argument type="int" name="inn"/>
+          <Argument type="Employee" name="employee"/>
+        </Method>
+        <Method name="sackEmployee" returnType="void" visibility="public">
+          <Argument type="int" name="inn"/>
+        </Method>
+        <Method name="getProfit" returnType="float" visibility="public"/>
+        <Method name="getLoss" returnType="float" visibility="public"/>
+        <Method name="buy" returnType="Buyable" visibility="public"/>
+        <Method name="sell" returnType="float" visibility="public"/>
+        <Method name="showAllInfo" returnType="void" visibility="public"/>
+        <Method name="showAnimals" returnType="void" visibility="public"/>
+        <Method name="showEmployees" returnType="void" visibility="public"/>
+        <Method name="showEnclosures" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Businessman" package="workwithzoo.user" visibility="public" xPosition="401.0" yPosition="660.0">
+      <Fields>
+        <Field name="LOCALE" type="Locale" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="DF" type="DateFormat" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="calendar" type="Calendar" visibility="public"/>
+        <Field name="currentDate" type="Date" visibility="public"/>
+        <Field name="money" type="float" visibility="public"/>
+        <Field name="agencies" type="Map&lt;String, SourceOfProfit&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="float" name="startMoney"/>
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="firstname"/>
+          <Argument type="String" name="lastname"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="buyAgency" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="SourceOfProfit" name="agency"/>
+        </Method>
+        <Method name="getAgency" returnType="SourceOfProfit" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="sellAgency" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="getMoney" returnType="float" visibility="public"/>
+        <Method name="setMoney" returnType="void" visibility="private">
+          <Argument type="float" name="money"/>
+        </Method>
+        <Method name="getProfit" returnType="float" visibility="public"/>
+        <Method name="getLoss" returnType="float" visibility="public"/>
+        <Method name="addDays" returnType="void" visibility="public">
+          <Argument type="int" name="days"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="User" package="workwithzoo.user" visibility="public" xPosition="-18.0" yPosition="622.0">
+      <Fields>
+        <Field name="id" type="int" visibility="public"/>
+        <Field name="firstname" type="String" visibility="private"/>
+        <Field name="lastname" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="protected">
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="fname"/>
+          <Argument type="String" name="lname"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getFirstname" returnType="String" visibility="public"/>
+        <Method name="setFirstname" returnType="void" visibility="public">
+          <Argument type="String" name="firstname"/>
+        </Method>
+        <Method name="getLastname" returnType="String" visibility="public"/>
+        <Method name="setLastname" returnType="void" visibility="public">
+          <Argument type="String" name="lastname"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="Employable" package="workwithzoo.employee" visibility="public" xPosition="7.0" yPosition="1047.0">
+      <Methods>
+        <Method name="getSalary" returnType="float" visibility="package"/>
+        <Method name="setSalary" returnType="void" visibility="package">
+          <Argument type="float" name="salary"/>
+        </Method>
+        <Method name="getINN" returnType="int" visibility="package"/>
+      </Methods>
+    </Interface>
+    <Interface name="ClimateObserver" package="workwithzoo.fauna" visibility="public" xPosition="2226.0" yPosition="600.0">
+      <Methods>
+        <Method name="updateClimate" returnType="void" visibility="public">
+          <Argument type="Climate.TypeClimate" name="newClimate"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Interface name="Deathable" package="workwithzoo.fauna" visibility="public" xPosition="2638.0" yPosition="2859.0">
+      <Methods>
+        <Method name="die" returnType="void" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Interface name="Buyable" package="workwithzoo.sourceofprofit" visibility="public" xPosition="867.0" yPosition="2859.0">
+      <Methods>
+        <Method name="sell" returnType="float" visibility="package"/>
+        <Method name="buy" returnType="Buyable" visibility="package"/>
+      </Methods>
+    </Interface>
+    <Interface name="Losseable" package="workwithzoo.sourceofprofit" visibility="public" xPosition="1526.0" yPosition="860.0">
+      <Methods>
+        <Method name="getLoss" returnType="float" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Interface name="Profitable" package="workwithzoo.sourceofprofit" visibility="public" xPosition="628.0" yPosition="2211.0">
+      <Methods>
+        <Method name="getProfit" returnType="float" visibility="package"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="workwithzoo.user.Businessman" target="workwithzoo.user.User"/>
+    <HasRelation name="owner" source="workwithzoo.sourceofprofit.SourceOfProfit" target="workwithzoo.user.Businessman" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="workwithzoo.employee.Guide" target="workwithzoo.employee.Employee"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="workwithzoo.sourceofprofit.Enclosure" target="workwithzoo.fauna.ClimateObserver"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="workwithzoo.employee.Employee" target="workwithzoo.sourceofprofit.Losseable"/>
+    <IsRelation name="is" source="workwithzoo.fauna.Lion" target="workwithzoo.fauna.Tropical"/>
+    <HasRelation name="enclosures" source="workwithzoo.sourceofprofit.Zoo" target="workwithzoo.sourceofprofit.Enclosure" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="Map&lt;Integer, Enclosure&gt;"/>
+    <UseRelation source="workwithzoo.fauna.Animal" target="workwithzoo.fauna.Climate" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="workwithzoo.sourceofprofit.SourceOfProfit" target="workwithzoo.sourceofprofit.Buyable"/>
+    <HasRelation name="ef" source="workwithzoo.sourceofprofit.Zoo" target="workwithzoo.sourceofprofit.EnclosureFactory" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="workwithzoo.sourceofprofit.Zoo" target="workwithzoo.sourceofprofit.Profitable"/>
+    <UseRelation source="workwithzoo.sourceofprofit.Zoo" target="workwithzoo.employee.Employee" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="workwithzoo.sourceofprofit.Zoo" target="workwithzoo.fauna.Animal" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="workwithzoo.sourceofprofit.EnclosureFactory" target="workwithzoo.sourceofprofit.Enclosure" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="workwithzoo.user.Businessman" target="workwithzoo.sourceofprofit.Profitable"/>
+    <IsRelation name="is" source="workwithzoo.sourceofprofit.Zoo" target="workwithzoo.sourceofprofit.SourceOfProfit"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="workwithzoo.fauna.Animal" target="workwithzoo.fauna.Deathable"/>
+    <HasRelation name="agencies" source="workwithzoo.user.Businessman" target="workwithzoo.sourceofprofit.SourceOfProfit" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="Map&lt;String, SourceOfProfit&gt;"/>
+    <IsRelation name="is" source="workwithzoo.fauna.Tropical" target="workwithzoo.fauna.Animal"/>
+    <HasRelation name="zoo" source="workwithzoo.fauna.Animal" target="workwithzoo.sourceofprofit.Zoo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="observers" source="workwithzoo.fauna.Climate" target="workwithzoo.fauna.ClimateObserver" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;ClimateObserver&gt;"/>
+    <UseRelation source="workwithzoo.sourceofprofit.Enclosure" target="workwithzoo.sourceofprofit.Buyable" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="workwithzoo.employee.Vet" target="workwithzoo.employee.Employee"/>
+    <HasRelation name="enclosure" source="workwithzoo.fauna.Animal" target="workwithzoo.sourceofprofit.Enclosure" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="workwithzoo.fauna.Animal" target="workwithzoo.sourceofprofit.Losseable"/>
+    <IsRelation name="is" source="workwithzoo.fauna.Middle" target="workwithzoo.fauna.Animal"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="workwithzoo.sourceofprofit.SourceOfProfit" target="workwithzoo.sourceofprofit.Profitable"/>
+    <HasRelation name="intoAnimals" source="workwithzoo.sourceofprofit.Enclosure" target="workwithzoo.fauna.Animal" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="Map&lt;String, Animal&gt;"/>
+    <UseRelation source="workwithzoo.fauna.Animal" target="workwithzoo.fauna.Animal" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="workwithzoo.sourceofprofit.EnclosureClimateException" target="workwithzoo.sourceofprofit.SourceOfProfitException"/>
+    <UseRelation source="workwithzoo.sourceofprofit.Zoo" target="workwithzoo.fauna.Climate" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="workwithzoo.fauna.Animal" target="workwithzoo.fauna.ClimateObserver"/>
+    <UseRelation source="workwithzoo.fauna.Climate" target="workwithzoo.fauna.Climate" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="workwithzoo.employee.Employee" target="workwithzoo.employee.Employable"/>
+    <UseRelation source="workwithzoo.user.Businessman" target="workwithzoo.sourceofprofit.SourceOfProfit" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="animals" source="workwithzoo.sourceofprofit.Zoo" target="workwithzoo.fauna.Animal" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="Map&lt;String, Animal&gt;"/>
+    <UseRelation source="workwithzoo.sourceofprofit.Zoo" target="workwithzoo.sourceofprofit.Enclosure" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="zoo" source="workwithzoo.sourceofprofit.Enclosure" target="workwithzoo.sourceofprofit.Zoo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="workwithzoo.sourceofprofit.Zoo" target="workwithzoo.sourceofprofit.Losseable"/>
+    <UseRelation source="workwithzoo.fauna.ClimateObserver" target="workwithzoo.fauna.Climate" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="workwithzoo.user.Businessman" target="workwithzoo.sourceofprofit.Losseable"/>
+    <IsRelation name="is" source="workwithzoo.fauna.Polar" target="workwithzoo.fauna.Animal"/>
+    <IsRelation name="is" source="workwithzoo.fauna.PolarBear" target="workwithzoo.fauna.Polar"/>
+    <UseRelation source="workwithzoo.fauna.Climate" target="workwithzoo.fauna.ClimateObserver" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="workwithzoo.sourceofprofit.EnclosureStoreException" target="workwithzoo.sourceofprofit.SourceOfProfitException"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="workwithzoo.sourceofprofit.Enclosure" target="workwithzoo.sourceofprofit.Buyable"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="workwithzoo.sourceofprofit.Zoo" target="workwithzoo.fauna.ClimateObserver"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="workwithzoo.fauna.Animal" target="workwithzoo.sourceofprofit.Buyable"/>
+    <HasRelation name="owner" source="workwithzoo.sourceofprofit.Zoo" target="workwithzoo.user.Businessman" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="workwithzoo.fauna.AmurTiger" target="workwithzoo.fauna.Middle"/>
+    <UseRelation source="workwithzoo.sourceofprofit.Enclosure" target="workwithzoo.fauna.Animal" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="staff" source="workwithzoo.sourceofprofit.Zoo" target="workwithzoo.employee.Employee" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="Map&lt;Integer, Employee&gt;"/>
+    <UseRelation source="workwithzoo.sourceofprofit.Enclosure" target="workwithzoo.fauna.Climate" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="workwithzoo.sourceofprofit.Enclosure" target="workwithzoo.sourceofprofit.Losseable"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="workwithzoo.sourceofprofit.Zoo" target="workwithzoo.sourceofprofit.Buyable"/>
+    <UseRelation source="workwithzoo.sourceofprofit.Buyable" target="workwithzoo.sourceofprofit.Buyable" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="workwithzoo.sourceofprofit.Zoo" target="workwithzoo.sourceofprofit.Buyable" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="workwithzoo.fauna.Animal" target="workwithzoo.sourceofprofit.Profitable"/>
+    <IsRelation name="is" source="workwithzoo.employee.Keeper" target="workwithzoo.employee.Employee"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="workwithzoo.sourceofprofit.SourceOfProfit" target="workwithzoo.sourceofprofit.Losseable"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

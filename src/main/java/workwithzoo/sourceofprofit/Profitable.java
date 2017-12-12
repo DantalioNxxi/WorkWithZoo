@@ -6,5 +6,9 @@ package workwithzoo.sourceofprofit;
  * @author DantalioNxxi
  */
 public interface Profitable {
-    double getProfit();
+    /**
+     * Get profit form object.
+     * @return profit is any money and another cashable equivalent.
+     */
+    float getProfit();
 }

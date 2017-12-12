@@ -2,15 +2,17 @@
 package workwithzoo.user;
 
 /**
- *
+ * Class of any user.
  * @author DantalioNxxi
+ * @since 26.11.2017
+ * @version 1.0.3
  */
 public class User {
-    public double id;
+    public int id;
     private String firstname;
     private String lastname;
 
-    public User(double id, String fname, String lname){
+    protected User(int id, String fname, String lname){
         this.id = id;
         firstname = fname;
         lastname =  lname;
@@ -34,6 +36,6 @@ public class User {
     
     @Override
     public String toString(){
-        return "Id "+id+" firstname "+firstname+" lastname "+lastname;
+        return "{Id "+id+" firstname "+firstname+" lastname "+lastname+"}";
     }
 }

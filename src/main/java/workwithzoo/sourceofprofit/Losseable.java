@@ -2,9 +2,13 @@
 package workwithzoo.sourceofprofit;
 
 /**
- *
+ * For objects, which cat to bring loss.
  * @author DantalioNxxi
  */
 public interface Losseable {
-    public double getLoss();
+    /**
+     * Get loss, who object brings.
+     * @return loss from object.
+     */
+    public float getLoss();
 }

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="WorkWithZoo">
+  <ClassDiagramComponents>
+    <Class name="Employee" package="workwithzoo.employee" visibility="public" isAbstract="true" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Animal" package="workwithzoo.fauna" visibility="public" isAbstract="true" xPosition="320.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Polar" package="workwithzoo.fauna" visibility="public" isAbstract="true" xPosition="620.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="PolarBear" package="workwithzoo.fauna" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Interface name="Reproduceable" package="workwithzoo.fauna" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Methods/>
+    </Interface>
+    <Interface name="Buyable" package="workwithzoo.sourceofprofit" visibility="public" xPosition="1520.0" yPosition="20.0">
+      <Methods>
+        <Method name="selling" returnType="boolean" visibility="package"/>
+        <Method name="buy" returnType="boolean" visibility="package"/>
+      </Methods>
+    </Interface>
+    <Class name="Enclosure" package="workwithzoo.sourceofprofit" visibility="public" isAbstract="true" xPosition="1820.0" yPosition="20.0">
+      <Fields>
+        <Field name="typeEnclosure" type="TypeEnclosure" visibility="protected"/>
+        <Field name="cost" type="float" visibility="protected"/>
+        <Field name="space" type="float" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Interface name="Leasable" package="ncec.workwithzoo.sourceofprofit" visibility="public" xPosition="2120.0" yPosition="20.0">
+      <Methods/>
+    </Interface>
+    <Interface name="Profitable" package="workwithzoo.sourceofprofit" visibility="public" xPosition="20.0" yPosition="420.0">
+      <Methods>
+        <Method name="getProfit" returnType="float" visibility="package"/>
+      </Methods>
+    </Interface>
+    <Class name="SourceOfProfit" package="workwithzoo.sourceofprofit" visibility="public" isAbstract="true" xPosition="320.0" yPosition="420.0">
+      <Fields>
+        <Field name="cost" type="float" visibility="protected"/>
+        <Field name="isProfitably" type="boolean" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Interface name="Storeable" package="workwithzoo.sourceofprofit" visibility="public" xPosition="620.0" yPosition="420.0">
+      <Methods>
+        <Method name="put" returnType="void" visibility="package">
+          <Argument type="T" name="t"/>
+        </Method>
+        <Method name="pull" returnType="T" visibility="package">
+          <Argument type="T" name="t"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Class name="Zoo" package="workwithzoo.sourceofprofit" visibility="public" xPosition="920.0" yPosition="420.0">
+      <Fields>
+        <Field name="name" type="String" visibility="public"/>
+        <Field name="owner" type="User" visibility="public"/>
+        <Field name="isContact" type="boolean" visibility="public"/>
+        <Field name="profitForDay" type="float" visibility="private"/>
+        <Field name="kProfit" type="float" visibility="private"/>
+        <Field name="cost" type="float" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="User" name="owner"/>
+          <Argument type="String" name="name"/>
+          <Argument type="boolean" name="isContact"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getProfit" returnType="float" visibility="public"/>
+        <Method name="buy" returnType="boolean" visibility="public"/>
+        <Method name="selling" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Businessman" package="workwithzoo.user" visibility="public" xPosition="1220.0" yPosition="420.0">
+      <Fields>
+        <Field name="money" type="float" visibility="private"/>
+        <Field name="agencies" type="Map&lt;String, SourceOfProfit&gt;" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="float" name="startMoney"/>
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="firstname"/>
+          <Argument type="String" name="lastname"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setAgency" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="name"/>
+          <Argument type="SourceOfProfit" name="agency"/>
+        </Method>
+        <Method name="getMoney" returnType="float" visibility="public"/>
+        <Method name="setMoney" returnType="void" visibility="public">
+          <Argument type="float" name="money"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="User" package="workwithzoo.user" visibility="public" xPosition="1520.0" yPosition="420.0">
+      <Fields>
+        <Field name="id" type="int" visibility="public"/>
+        <Field name="firstname" type="String" visibility="private"/>
+        <Field name="lastname" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="fname"/>
+          <Argument type="String" name="lname"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getFirstname" returnType="String" visibility="public"/>
+        <Method name="setFirstname" returnType="void" visibility="public">
+          <Argument type="String" name="firstname"/>
+        </Method>
+        <Method name="getLastname" returnType="String" visibility="public"/>
+        <Method name="setLastname" returnType="void" visibility="public">
+          <Argument type="String" name="lastname"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="workwithzoo.sourceofprofit.Enclosure" target="workwithzoo.sourceofprofit.Storeable"/>
+    <HasRelation name="agencies" source="workwithzoo.user.Businessman" target="workwithzoo.sourceofprofit.SourceOfProfit" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="Map&lt;String, SourceOfProfit&gt;"/>
+    <IsRelation name="is" source="workwithzoo.user.Businessman" target="workwithzoo.user.User"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="workwithzoo.fauna.Animal" target="workwithzoo.fauna.Reproduceable"/>
+    <IsRelation name="is" source="workwithzoo.fauna.PolarBear" target="workwithzoo.fauna.Polar"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="workwithzoo.sourceofprofit.Enclosure" target="workwithzoo.sourceofprofit.Buyable"/>
+    <UseRelation source="workwithzoo.user.Businessman" target="workwithzoo.sourceofprofit.SourceOfProfit" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="workwithzoo.fauna.Polar" target="workwithzoo.fauna.Animal"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="workwithzoo.sourceofprofit.SourceOfProfit" target="workwithzoo.sourceofprofit.Profitable"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="workwithzoo.sourceofprofit.SourceOfProfit" target="workwithzoo.sourceofprofit.Buyable"/>
+    <IsRelation name="is" source="workwithzoo.sourceofprofit.Zoo" target="workwithzoo.sourceofprofit.SourceOfProfit"/>
+    <HasRelation name="owner" source="workwithzoo.sourceofprofit.Zoo" target="workwithzoo.user.User" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

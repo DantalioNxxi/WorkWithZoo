@@ -1,0 +1,40 @@
+let b1 = new Businessman(200000, 1, "Ivan", "Ivanov")
+let z1 = new Zoo($b1, "BigZoo")
+let e1 = new Enclosure(101, 5)
+$b1.buyAgency("BigZoo", $z1)
+$z1.addEnclosure(101, $e1)
+let bear1 = new PolarBear("Snezhok")
+$e1.setThermoregulation()
+$z1.addAnimal($bear1)
+$z1.addAnimalIntoEnclosure("Snezhok", 101);
+#$e1.setClimate(Climate.TypeClimate.MIDDLE_CLIMATE, 1, new Enclosure(788, 3), Climate.TypeClimate.POLAR_CLIMATE, 2, Any.clll.field)
+$e1.setClimate(Climate.TypeClimate.MIDDLE_CLIMATE)
+$e1.setClimate("POLAR_CLIMATE")
+$b1.addDays(1);
+
+#===================
+#let z1 = new Zoo($b1, "BigZoo")
+#$b1.buyAgency("BigZoo", $z1)
+#$z1.addEnclosure(101, $e1)
+
+#===================
+#let bear1 = new PolarBear("Снежок");  #НАЧАЛИСЬ ПРОБЛЕМЫ С КОДИРОВКОЙ
+#$z1.addAnimal($bear1)
+#$b1.addDays(1)
+#$z1.addAnimalIntoEnclosure("Снежок", 101)
+#$e1.setClimat(Climate.TypeClimate.MIDDLE_CLIMATE)
+#$b1.addDays(1)
+
+#===================
+#let b1 = new Businessman(200000, 11, "Ivan", "Petrov")
+#let b2 = new Businessman(300000, 13, "Petr", "Ivanov")
+#let zoo = new Zoo($b1, "Big Zoo")
+#let zoo2 = new Zoo(new Businessman(1500000, 15, "another", "businessman1"), "SecondZoo")
+
+#===================
+#Old version support an User
+#let user = new User(1, "a", "b") #- пока проблема в юзере
+#let zoo = new Zoo($user, "name")
+#let zoo2 = new Zoo(new User(22, "a", "b"), "name")
+
+#$e1.setClimat(Climate.TypeClimate.MIDDLE_CLIMATE);

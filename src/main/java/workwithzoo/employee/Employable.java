@@ -2,16 +2,26 @@
 package workwithzoo.employee;
 
 /**
- *
+ * Interface for any, who can to get salary and has INN.
  * @author DantalioNxxi
  */
 public interface Employable {
     
-    double getSalary();
+    /**
+     * Returnes a value of the salary of any employee.
+     * @return salary of the employee
+     */
+    float getSalary();
     
-    void setSalary(double salary);
+    /**
+     * Sets a value of the salary for any employee.
+     * @param salary salary for employee by default
+     */
+    void setSalary(float salary);
     
-    double getINN();
-    
-    //про увольнение?
+    /**
+     * Returns INN of any employee.
+     * @return INN if the empoyee
+     */
+    int getINN();
 }

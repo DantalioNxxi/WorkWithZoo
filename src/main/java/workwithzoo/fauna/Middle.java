@@ -2,8 +2,8 @@
 package workwithzoo.fauna;
 
 /**
- * Abstract class for hierarchy of the Animals. It is Polar Animals.
- * By default his chields like the cold climate.
+ * Abstract class for hierarchy of the Animals. It is Middle Animals.
+ * By default his chields like the middle climate.
  * @author DantalioNxxi
  * @see Animal
  * @see Likes
@@ -12,20 +12,21 @@ package workwithzoo.fauna;
  * @since 26.11.2017
  * @version 1.0.3
  */
-@Likes(likesClimate = Climate.TypeClimate.POLAR_CLIMATE)
+@Likes(likesClimate = Climate.TypeClimate.MIDDLE_CLIMATE)
 /**
- * //By default is requires more food and brings more profit.
+ * //By default is requires less food and brings less profit.
  */
-public abstract class Polar extends Animal{
+public class Middle extends Animal{
     /**
      * If cost, costCare, defaultProfit, aggression did not defined, then they will by default.
      * @param nickname name of animal.
      */
-    protected Polar(String nickname){
+    protected Middle(String nickname){
         super(nickname);
-        this.cost = 50_000;
+        this.cost = 30_000;
         this.costCare = cost/50;
         this.defaultProfit = cost/25;
-        this.aggression = 5;
+        this.aggression = 3;
     }
+    
 }
